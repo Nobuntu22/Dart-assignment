@@ -1,0 +1,42 @@
+import 'dart:io';
+
+// Interface
+abstract class Drawable {
+  void draw();
+}
+
+// Base class
+class Shape {
+  String color;
+
+  Shape(this.color);
+}
+
+// Derived class Circle
+class Circle extends Shape implements Drawable {
+  double radius;
+
+  Circle(String color, this.radius) : super(color);
+
+  @override
+  void draw() {
+    print('Drawing a ${color} circle with radius ${radius}');
+  }
+}
+
+// Derived class Rectangle
+class Rectangle extends Shape implements Drawable {
+  double width;
+  double height;
+
+  Rectangle(String color, this.width, this.height) : super(color);
+
+  @override
+  void draw() {
+    print('Drawing a ${color} rectangle with width ${width} and height ${height}');
+  }
+}
+
+// Class to read data from file and create shapes
+class FileReader {
+  List
